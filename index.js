@@ -1,11 +1,22 @@
 var express = require("express");
+var hbs = require("express-handlebars");
+var mongoose = require("./db/connection");
 var app     = express();
 
-app.use("/", express.static("public"));
-// app.use("/js", express.static(__dirname + "/public/js"));
+var Recipe = mongoose.model("Recipe");
 
+app.use("/", express.static("public"));
+app.set("view engine", "hbs");
+app.engine(".hbs", hbs({
+  extname:      ".hbs",
+  partialsDir:  "views/",
+  layoutsDir:   "views/",
+  defaultLayout: "layout-main"
+}));
 app.get("/", function(req,res){
-  res.sendFile(__dirname + "/public/index.html");
+  Recipe.find().then(function(){
+    res.json(response);
+  });
 });
 
 
