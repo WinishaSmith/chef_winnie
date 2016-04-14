@@ -7,3 +7,5 @@ var RecipeSchema = {
 
 mongoose.model("Recipe", RecipeSchema);
 mongoose.connect("mongodb://localhost/chef_winnie");
+
+module.exports = mongoose;
