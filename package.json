@@ -18,6 +18,7 @@
   "homepage": "https://github.com/WinishaSmith/chef_winnie#readme",
   "dependencies": {
     "bower": "^1.7.9",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "mongoose": "^4.4.12"
   }
 }
