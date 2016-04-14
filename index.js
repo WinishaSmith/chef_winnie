@@ -5,7 +5,6 @@ var app     = express();
 
 var Recipe = mongoose.model("Recipe");
 
-app.use("/", express.static("public"));
 app.set("view engine", "hbs");
 app.engine(".hbs", hbs({
   extname:      ".hbs",
@@ -14,9 +13,11 @@ app.engine(".hbs", hbs({
   defaultLayout: "layout-main"
 }));
 app.get("/", function(req,res){
-  Recipe.find().then(function(){
-    res.json(response);
-  });
+  // Recipe.find().then(function(){
+  //   res.json(response);
+  // });
+
+  res.render("recipes-index");
 });
 
 
