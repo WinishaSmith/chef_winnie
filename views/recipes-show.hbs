@@ -1,0 +1,9 @@
+<h2>{{recipe.name}}</h2>
+
+<p>{{recipe.description}}</p>
+
+<form action="/{{recipe.name}}" method="POST">
+  <input type="text" name="recipe[name]" value="{{recipe.name}}" />
+  <textarea name="recipe[description]">{{recipe.description}}</textarea>
+  <button type="submit">Update</button>
+</form>

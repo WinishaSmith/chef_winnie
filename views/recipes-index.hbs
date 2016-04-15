@@ -1,1 +1,6 @@
 <h1> Recipes List</h1>
+
+{{#each recipes as |recipe| }}
+  <h3>{{recipe.name}}</h3>
+  <p>{{recipe.description}}</p>
+{{/each}}
